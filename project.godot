@@ -70,7 +70,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/game-template/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/game-template/plugin.cfg", "res://addons/orbit_camera/plugin.cfg" )
 
 [input]
 
