@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://addons/zylann.hterrain/hterrain_resource_saver.gd"
 }, {
 "base": "KinematicBody",
+"class": "KineCar",
+"language": "GDScript",
+"path": "res://car/code/kinecar.gd"
+}, {
+"base": "KinematicBody",
 "class": "KinematicCar",
 "language": "GDScript",
 "path": "res://car/code/kinematiccar.gd"
@@ -42,6 +47,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "HTerrainDataLoader": "",
 "HTerrainDataSaver": "",
+"KineCar": "",
 "KinematicCar": "",
 "SceneData": "",
 "Scenes": "",
