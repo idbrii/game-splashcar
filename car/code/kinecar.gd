@@ -14,6 +14,7 @@ export(float, 0.001, 1000, 1) var slip_speed := 400.0
 export(float, 0.001, 10,   1) var traction_fast := 0.1
 export(float, 0.001, 10,   1) var traction_slow := 0.7
 
+
 var acceleration = Vector3.ZERO
 var velocity = Vector3.ZERO
 var steer_direction
@@ -46,6 +47,7 @@ func get_input():
 
 
 func calculate_steering(dt):
+    # Ref: http://engineeringdotnet.blogspot.com/2010/04/simple-2d-car-physics-in-games.html
     var rear_wheel = transform.origin + transform.basis.z * wheel_base / 2.0
     var front_wheel = transform.origin - transform.basis.z * wheel_base / 2.0
     rear_wheel += velocity * dt
@@ -61,6 +63,18 @@ func calculate_steering(dt):
         velocity = -new_heading * min(velocity.length(), max_speed_reverse)
     look_at(transform.origin + new_heading, transform.basis.y)
 
+
+func _calculate_max_speed() -> float:
+    # https://github.com/kidscancode/godot_recipes/issues/22#issuecomment-1027965700
+    if drag >= 0 and friction >= 0:
+        return -1.0
+    elif drag >= 0 and friction < 0:
+        return engine_power / friction
+    elif drag < 0 and friction >= 0:
+        return sqrt(engine_power / drag)
+
+    var discriminant: float = (friction * friction) - (4 * drag * engine_power)
+    return (-friction - sqrt(discriminant)) / (2 * drag) if discriminant >= 0 else -1.0
 
 
 
