@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://car/assets/kenney_carkit_gltf/plastic.material" type="Material" id=1]
 [ext_resource path="res://car/code/kinecar.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://car/assets/kenney_carkit_gltf/window.material" type="Material" id=7]
 [ext_resource path="res://car/assets/kenney_carkit_gltf/wheelInside.material" type="Material" id=8]
 [ext_resource path="res://car/assets/kenney_carkit_gltf/carTire.material" type="Material" id=9]
+[ext_resource path="res://car/code/speedometer.gd" type="Script" id=10]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "truck_Mesh body"
@@ -187,3 +188,12 @@ shape = SubResource( 3 )
 [node name="body" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04043, 0.114923 )
 shape = SubResource( 4 )
+
+[node name="Speedometer" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07046, 0 )
+script = ExtResource( 10 )
+nodepath_body = NodePath("..")
+
+[node name="Text" type="Label3D" parent="Speedometer"]
+pixel_size = 0.1
+billboard = 2
