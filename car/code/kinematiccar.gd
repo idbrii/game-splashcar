@@ -2,7 +2,7 @@ extends KinematicBody
 
 class_name KinematicCar
 
-export(float, 100,   0,    1) var gravity := -20.0
+export(float, -100,  0,    1) var gravity := -20.0
 export(float, 0.001, 180,  1) var steering_max_angle := 30.0 # degrees
 export(float, 0,     5,    1) var steering_exaggeration := 1.0
 export(float, 0.001, 100,  1) var engine_power := 6.0
@@ -29,7 +29,7 @@ func process_drive(dt, turn_input: float, power_input: float):
     if is_on_floor():
         if power_input > 0:
             acceleration = -transform.basis.z * engine_power
-        if power_input < 0:
+        elif power_input < 0:
             acceleration = transform.basis.z * braking
 
         var steer_angle := turn_input * deg2rad(steering_max_angle)
@@ -69,6 +69,7 @@ func apply_friction(dt, vel, acc):
 
 
 func calculate_heading(dt, vel, steer_angle) -> Vector3:
+    # Ref: http://engineeringdotnet.blogspot.com/2010/04/simple-2d-car-physics-in-games.html
     var front_wheel = axle_front.global_translation
     var rear_wheel = axle_rear.global_translation
 
