@@ -3,16 +3,16 @@ extends KinematicBody
 class_name KineCar
 
 export(float, -100,  0,    1) var gravity := -20.0
-export(float, 0,     100,  1) var wheel_base = 70
-export(float, 0.001, 180,  1) var steering_angle = 15
-export(float, 0,     1000, 1) var engine_power = 800
-export(float, -10,   0,    0.01) var friction = -0.9
-export(float, -10,   0,    0.01) var drag = -0.001
-export(float, -1000, 0,    1) var braking = -450
-export(float, 0.001, 1000, 1) var max_speed_reverse = 250
-export(float, 0.001, 1000, 1) var slip_speed = 400
-export(float, 0.001, 10,   1) var traction_fast = 0.1
-export(float, 0.001, 10,   1) var traction_slow = 0.7
+export(float, 0,     100,  1) var wheel_base := 70.0
+export(float, 0.001, 180,  1) var steering_angle := 15
+export(float, 0,     1000, 1) var engine_power := 800.0
+export(float, -10,   0,    0.01) var friction := -0.9
+export(float, -10,   0,    0.01) var drag := -0.001
+export(float, -1000, 0,    1) var braking := -450.0
+export(float, 0.001, 1000, 1) var max_speed_reverse := 250.0
+export(float, 0.001, 1000, 1) var slip_speed := 400.0
+export(float, 0.001, 10,   1) var traction_fast := 0.1
+export(float, 0.001, 10,   1) var traction_slow := 0.7
 
 var acceleration = Vector3.ZERO
 var velocity = Vector3.ZERO
