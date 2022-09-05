@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://car/assets/kenney_carkit_gltf/carTire.material" type="Material" id=1]
 [ext_resource path="res://car/assets/kenney_carkit_gltf/paintRed.material" type="Material" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://car/assets/kenney_carkit_gltf/lightBack.material" type="Material" id=6]
 [ext_resource path="res://car/assets/kenney_carkit_gltf/lightFront.material" type="Material" id=7]
 [ext_resource path="res://car/assets/kenney_carkit_gltf/lightBlue.material" type="Material" id=8]
+[ext_resource path="res://car/code/playerdrivecontroller.gd" type="Script" id=9]
+[ext_resource path="res://car/code/kinematiccar.gd" type="Script" id=10]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "firetruck_Mesh body"
@@ -195,30 +197,35 @@ radius = 0.886847
 height = 2.17418
 
 [node name="firetruck" type="KinematicBody"]
+script = ExtResource( 10 )
+nodepath_wheel_left = NodePath("firetruck_root/wheel_frontLeft")
+nodepath_wheel_right = NodePath("firetruck_root/wheel_frontRight")
+nodepath_axle_front = NodePath("axle_front")
+nodepath_axle_rear = NodePath("axle_rear")
 
-[node name="firetruck" type="Spatial" parent="."]
+[node name="firetruck_root" type="Spatial" parent="."]
 
-[node name="body" type="MeshInstance" parent="firetruck"]
+[node name="body" type="MeshInstance" parent="firetruck_root"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.59888e-14, 0.2, 0.05 )
 mesh = SubResource( 1 )
 
-[node name="grill" type="MeshInstance" parent="firetruck/body"]
+[node name="grill" type="MeshInstance" parent="firetruck_root/body"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.79664e-14, 0.0742279, -1.65 )
 mesh = SubResource( 2 )
 
-[node name="wheel_backLeft" type="MeshInstance" parent="firetruck"]
+[node name="wheel_backLeft" type="MeshInstance" parent="firetruck_root"]
 transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.3, 0.66 )
 mesh = SubResource( 3 )
 
-[node name="wheel_backRight" type="MeshInstance" parent="firetruck"]
+[node name="wheel_backRight" type="MeshInstance" parent="firetruck_root"]
 transform = Transform( 1, 0, 8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.4, 0.3, 0.66 )
 mesh = SubResource( 3 )
 
-[node name="wheel_frontLeft" type="MeshInstance" parent="firetruck"]
+[node name="wheel_frontLeft" type="MeshInstance" parent="firetruck_root"]
 transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.3, -0.96 )
 mesh = SubResource( 3 )
 
-[node name="wheel_frontRight" type="MeshInstance" parent="firetruck"]
+[node name="wheel_frontRight" type="MeshInstance" parent="firetruck_root"]
 transform = Transform( 1, 0, 8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.4, 0.3, -0.96 )
 mesh = SubResource( 3 )
 
@@ -233,3 +240,12 @@ shape = SubResource( 4 )
 [node name="body" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18215, 0.114923 )
 shape = SubResource( 5 )
+
+[node name="PlayerController" type="Node" parent="."]
+script = ExtResource( 9 )
+nodepath_body = NodePath("..")
+
+[node name="direction_indicator" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.3, -3.94704 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../firetruck_root")
