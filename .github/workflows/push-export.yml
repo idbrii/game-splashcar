@@ -4,19 +4,21 @@ on:
   push:
     branches:
       - main
-      - staging
+      # - staging
+      # - "feature/**"
 env:
-  GODOT_VERSION: 3.4.4
+  GODOT_VERSION: 3.5
   EXPORT_NAME: godot-game-template
-  ITCH_IO: ${{ false }} #set to true if you want to enable automatic itch.io deploy
-  RELEASE_ANDROID: ${{ false }} #set to  true if you want to enable automatic android release export
+  ITCH_IO: false #set to true if you want to enable automatic itch.io deploy
+  RELEASE_ANDROID: false #set to  true if you want to enable automatic android release export
 
 jobs:
   export-windows:
+    if: true
     name: Windows Export
     runs-on: ubuntu-20.04
     container:
-      image: barichello/godot-ci:3.4.4
+      image: barichello/godot-ci:3.5
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -36,7 +38,7 @@ jobs:
       - name: Zip Folder
         run: zip -r itch.zip build/windows
       - name: Deploy to itch.io
-        if: ${{ env.ITCH_IO==true }}
+        if: ${{ env.ITCH_IO=='true' }}
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
@@ -46,10 +48,11 @@ jobs:
           PACKAGE: itch.zip
 
   export-linux:
+    if: true
     name: Linux Export
     runs-on: ubuntu-20.04
     container:
-      image: barichello/godot-ci:3.4.4
+      image: barichello/godot-ci:3.5
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -69,7 +72,7 @@ jobs:
       - name: Zip Folder
         run: zip -r itch.zip build/linux
       - name: Deploy to itch.io
-        if: ${{ env.ITCH_IO==true }}
+        if: ${{ env.ITCH_IO=='true' }}
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
@@ -79,10 +82,11 @@ jobs:
           PACKAGE: itch.zip
 
   export-web:
+    if: true
     name: Web Export
     runs-on: ubuntu-20.04
     container:
-      image: barichello/godot-ci:3.4.4
+      image: barichello/godot-ci:3.5
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -104,15 +108,14 @@ jobs:
         run: |
           apt-get update && apt-get install -y rsync
       - name: Deploy to GitHub Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: build/web # The folder the action should deploy.
       - name: Zip Folder
         run: zip -r itch.zip build/web
       - name: Deploy to itch.io
-        if: ${{ env.ITCH_IO==true }}
+        if: ${{ env.ITCH_IO=='true' }}
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
@@ -122,10 +125,11 @@ jobs:
           PACKAGE: itch.zip
 
   export-mac:
+    if: true
     name: Mac Export
     runs-on: ubuntu-20.04
     container:
-      image: barichello/godot-ci:3.4.4
+      image: barichello/godot-ci:3.5
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -145,7 +149,7 @@ jobs:
       - name: Zip Folder
         run: zip -r itch.zip build/mac
       - name: Deploy to itch.io
-        if: ${{ env.ITCH_IO==true }}
+        if: ${{ env.ITCH_IO=='true' }}
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
@@ -158,7 +162,7 @@ jobs:
     name: Android Export
     runs-on: ubuntu-20.04
     container:
-      image: barichello/godot-ci:3.4.4
+      image: barichello/godot-ci:3.5
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -176,7 +180,7 @@ jobs:
           mkdir -v -p build/android
           godot --verbose --export-debug "Android-CI-job (Do not edit)" ./build/android/$EXPORT_NAME.debug.apk
       - name: Android Release Build
-        if: ${{ env.RELEASE_ANDROID==true }}
+        if: ${{ env.RELEASE_ANDROID=='true' }}
         env:
           K8S_SECRET_RELEASE_KEYSTORE_BASE64: ${{ secrets.K8S_SECRET_RELEASE_KEYSTORE_BASE64 }}
           K8S_SECRET_RELEASE_KEYSTORE_USER: ${{ secrets.K8S_SECRET_RELEASE_KEYSTORE_USER  }}
@@ -184,8 +188,8 @@ jobs:
         run: |
           echo $K8S_SECRET_RELEASE_KEYSTORE_BASE64 | base64 --decode > /root/release.keystore
           sed 's@keystore/release[[:space:]]*=[[:space:]]*".*"@keystore/release = "/root/release.keystore"@g' -i export_presets.cfg
-          sed 's@keystore/release_password[[:space:]]*=[[:space:]]*".*"@keystore/release_password="'$K8S_SECRET_RELEASE_KEYSTORE_PASSWORD'"@g' -i export_presets.cfg
           sed 's@keystore/release_user[[:space:]]*=[[:space:]]*".*"@keystore/release_user="'$K8S_SECRET_RELEASE_KEYSTORE_USER'"@g' -i export_presets.cfg
+          sed 's@keystore/release_password[[:space:]]*=[[:space:]]*".*"@keystore/release_password="'$K8S_SECRET_RELEASE_KEYSTORE_PASSWORD'"@g' -i export_presets.cfg
           godot --verbose --export "Android" ./build/android/$EXPORT_NAME.release.apk
       - uses: actions/upload-artifact@v1
         with:
@@ -194,7 +198,7 @@ jobs:
       - name: Zip Folder
         run: zip -r itch.zip build/android
       - name: Deploy to itch.io
-        if: ${{ env.ITCH_IO==true }}
+        if: ${{ env.ITCH_IO=='true' }}
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
