@@ -1,6 +1,7 @@
-# Worldkit
+# Splash Car
 
-A sandbox for making 3D games.
+A silly driving game about driving through puddles to splash people on a hot day.
+
 
 # Car
 
@@ -9,6 +10,7 @@ https://kidscancode.org/godot_recipes/3d/kinematic_car/car_base/
 
 And assets from:
 https://kenney.nl/assets/car-kit
+
 
 # Template
 
