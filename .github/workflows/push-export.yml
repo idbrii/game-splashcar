@@ -1,3 +1,4 @@
+# MIT. See ../../addons/game-template/license.md
 name: "Push Export"
 on:
   push:
