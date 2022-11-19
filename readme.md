@@ -2,6 +2,13 @@
 
 A sandbox for making 3D games.
 
+# Car
+
+Using demo project from:
+https://kidscancode.org/godot_recipes/3d/kinematic_car/car_base/
+
+And assets from:
+https://kenney.nl/assets/car-kit
 
 # Template
 
