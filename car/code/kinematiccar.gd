@@ -62,9 +62,12 @@ func process_drive(dt, turn_input: float, power_input: float):
 
 
 func apply_friction(dt, vel, acc):
-    var friction_force = vel * friction * dt
-    var drag_force = vel * vel.length() * drag * dt
-    acc += drag_force + friction_force
+    var resistance_dir = velocity.normalized()
+    var speed = velocity.length()
+    # friction and drag are negative or zero.
+    var friction_force = speed * friction * dt
+    var drag_force = speed * speed * drag * dt
+    acc += (drag_force + friction_force) * resistance_dir
     return acc
 
 
