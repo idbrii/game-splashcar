@@ -15,7 +15,7 @@ var path = []
 export var show_path := true
 
 var nav: Navigation
-onready var camera = get_viewport().get_camera()
+onready var camera: Spatial = get_viewport().get_camera()
 
 
 func _ready():
@@ -60,6 +60,11 @@ func _physics_process(delta):
             var look_at_point = translation + direction.normalized()
             # Make the robot look at the point.
             look_at(look_at_point, Vector3.UP)
+
+            # TODO(dbriscoe): Not sure this is actually the eye's right vector.
+            var eye_right := camera.global_transform.basis.x
+            var dot := eye_right.dot(direction)
+            $Sprite.flip_h = dot < 0
 
 
 func navigate_to_point(target_point):
