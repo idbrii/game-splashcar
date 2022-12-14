@@ -59,10 +59,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7668, 0.180301, -13.0126 )
 [node name="van" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.96918, 0.15476, 16.8576 )
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.644764, 0.764381, 0, -0.764381, 0.644764, 2.29427, 13.214, 22.3847 )
-current = true
-
 [node name="PlayerTruck" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.60087, 0.181384, 20.4244 )
 
