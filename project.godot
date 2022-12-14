@@ -22,12 +22,12 @@ _global_script_classes=[ {
 "base": "KinematicBody",
 "class": "KineCar",
 "language": "GDScript",
-"path": "res://car/code/kinecar.gd"
+"path": "res://code/kinecar.gd"
 }, {
 "base": "KinematicBody",
 "class": "KinematicCar",
 "language": "GDScript",
-"path": "res://car/code/kinematiccar.gd"
+"path": "res://code/kinematiccar.gd"
 }, {
 "base": "Reference",
 "class": "SceneData",
@@ -58,7 +58,7 @@ _global_script_class_icons={
 
 config/name="WorldKit"
 config/description="A sandbox for making 3D games."
-run/main_scene="res://car/code/TestWorld.tscn"
+run/main_scene="res://code/TestWorld.tscn"
 boot_splash/image="res://assets/splash.png"
 boot_splash/bg_color=Color( 0.0862745, 0.0862745, 0.0862745, 1 )
 config/icon="res://assets/sprites/icon.png"
