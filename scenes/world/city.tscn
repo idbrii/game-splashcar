@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/world/city_block.tscn" type="PackedScene" id=1]
 
-[node name="Spatial" type="Spatial"]
+[node name="TheCity" type="Spatial"]
 
 [node name="city_block" parent="." instance=ExtResource( 1 )]
 
