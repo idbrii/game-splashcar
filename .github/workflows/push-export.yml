@@ -8,7 +8,7 @@ on:
       # - "feature/**"
 env:
   GODOT_VERSION: 3.5
-  EXPORT_NAME: godot-game-template
+  EXPORT_NAME: splashcar
   ITCH_IO: false #set to true if you want to enable automatic itch.io deploy
   RELEASE_ANDROID: false #set to  true if you want to enable automatic android release export
 
