@@ -24,11 +24,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://code/kinecar.gd"
 }, {
-"base": "KinematicBody",
-"class": "KinematicCar",
-"language": "GDScript",
-"path": "res://code/kinematiccar.gd"
-}, {
 "base": "Reference",
 "class": "SceneData",
 "language": "GDScript",
@@ -48,7 +43,6 @@ _global_script_class_icons={
 "HTerrainDataLoader": "",
 "HTerrainDataSaver": "",
 "KineCar": "",
-"KinematicCar": "",
 "SceneData": "",
 "Scenes": "",
 "Transition": ""
