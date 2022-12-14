@@ -45,7 +45,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+[node name="Sprite" type="AnimatedSprite3D" parent="."]
 transform = Transform( 0.444, 0, 0, 0, 0.444, 0, 0, 0, 0.444, 0, 0.760485, 0 )
 billboard = 2
 frames = SubResource( 8 )

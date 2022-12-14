@@ -70,6 +70,10 @@ func navigate_to_point(target_point):
         draw_path(path)
 
 
+func on_splashed():
+    $Sprite.play("wet")
+
+
 #~ func _unhandled_input(event):
 #~     if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
 #~         var point = event.position
