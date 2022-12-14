@@ -1,6 +1,6 @@
 # Based on godot sample: 3D Navmesh Demo
 # https://godotengine.org/asset-library/asset/124
-extends Node
+extends KinematicBody
 
 class_name Pedestrian
 
@@ -12,10 +12,9 @@ const SPEED = 10.0
 var m = SpatialMaterial.new()
 
 var path = []
-var show_path = true
+export var show_path := true
 
-onready var nav: Navigation = get_node("%Navigation")
-onready var robot  = get_parent()
+var nav: Navigation
 onready var camera = get_viewport().get_camera()
 
 
@@ -37,7 +36,7 @@ func _physics_process(delta):
         # Direction is the difference between where we are now
         # and where we want to go.
         var destination = path[0]
-        direction = destination - robot.translation
+        direction = destination - translation
 
         # If the next node is closer than we intend to 'step', then
         # take a smaller step. Otherwise we would go past it and
@@ -50,7 +49,7 @@ func _physics_process(delta):
         # Move the robot towards the path node, by how far we want to travel.
         # Note: For a KinematicBody, we would instead use move_and_slide
         # so collisions work properly.
-        robot.translation += direction.normalized() * step_size
+        translation += direction.normalized() * step_size
 
         # Lastly let's make sure we're looking in the direction we're traveling.
         # Clamp y to 0 so the robot only looks left and right, not up/down.
@@ -58,14 +57,14 @@ func _physics_process(delta):
         if direction:
             # Direction is relative, so apply it to the robot's location to
             # get a point we can actually look at.
-            var look_at_point = robot.translation + direction.normalized()
+            var look_at_point = translation + direction.normalized()
             # Make the robot look at the point.
-            robot.look_at(look_at_point, Vector3.UP)
+            look_at(look_at_point, Vector3.UP)
 
 
 func navigate_to_point(target_point):
     # Set the path between the robots current location and our target.
-    path = nav.get_simple_path(robot.translation, target_point, true)
+    path = nav.get_simple_path(translation, target_point, true)
 
     if show_path:
         draw_path(path)
