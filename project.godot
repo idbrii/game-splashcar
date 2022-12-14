@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://code/kinecar.gd"
 }, {
+"base": "Node",
+"class": "Pedestrian",
+"language": "GDScript",
+"path": "res://code/pedestrian.gd"
+}, {
 "base": "Reference",
 "class": "SceneData",
 "language": "GDScript",
@@ -43,6 +48,7 @@ _global_script_class_icons={
 "HTerrainDataLoader": "",
 "HTerrainDataSaver": "",
 "KineCar": "",
+"Pedestrian": "",
 "SceneData": "",
 "Scenes": "",
 "Transition": ""
