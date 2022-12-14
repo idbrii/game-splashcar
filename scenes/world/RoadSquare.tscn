@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/kenney_citykitroads/road_straight.glb" type="PackedScene" id=1]
+[ext_resource path="res://assets/kenney_citykitroads/road_crossroad.glb" type="PackedScene" id=2]
+
+[node name="RoadSquare" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 4 )
+
+[node name="Vertical" type="Spatial" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.746, 0, -0.005 )
+__meta__ = {
+"_editor_description_": "Needs a separate root for vert because the road pivots aren't centred. :("
+}
+
+[node name="road_straight10" type="Spatial" parent="Vertical" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5.96046e-08 )
+
+[node name="road_straight11" type="Spatial" parent="Vertical" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -5.96046e-08 )
+
+[node name="road_straight12" type="Spatial" parent="Vertical" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -5.96046e-08 )
+
+[node name="road_straight13" type="Spatial" parent="Vertical" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1.19209e-07 )
+
+[node name="road_straight14" type="Spatial" parent="Vertical" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1.78814e-07 )
+
+[node name="Horizontal" type="Spatial" parent="."]
+
+[node name="road_crossroad" type="Spatial" parent="Horizontal" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00351763, 0, -0.756651 )
+
+[node name="road_straight" type="Spatial" parent="Horizontal" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00352, 0, -0.756651 )
+
+[node name="road_straight5" type="Spatial" parent="Horizontal" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00352, 0, -0.756651 )
+
+[node name="road_straight6" type="Spatial" parent="Horizontal" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00352, 0, -0.756651 )
+
+[node name="road_straight7" type="Spatial" parent="Horizontal" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00352, 0, -0.756651 )
+
+[node name="road_straight8" type="Spatial" parent="Horizontal" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.996482, 0, -0.756651 )
