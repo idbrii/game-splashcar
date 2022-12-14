@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://code/pedestrian.gd" type="Script" id=1]
+[ext_resource path="res://assets/melissa/guy1_idle.png" type="Texture" id=2]
+[ext_resource path="res://assets/melissa/guy1_wet.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape" id=5]
 radius = 0.573226
@@ -8,6 +10,19 @@ height = 1.8271
 
 [sub_resource type="SpatialMaterial" id=7]
 albedo_color = Color( 0.396078, 0.956863, 0.372549, 1 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "wet",
+"speed": 5.0
+} ]
 
 [node name="pedestrian" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.96533, 0, 20.7545 )
@@ -22,9 +37,16 @@ __meta__ = {
 
 [node name="visual" type="CSGCylinder" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.504, 0 )
+visible = false
 radius = 0.488
 height = 2.858
 material = SubResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.444, 0, 0, 0, 0.444, 0, 0, 0, 0.444, 0, 0.760485, 0 )
+billboard = 2
+frames = SubResource( 8 )
+animation = "idle"
