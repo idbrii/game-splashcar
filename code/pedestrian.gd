@@ -70,13 +70,13 @@ func navigate_to_point(target_point):
         draw_path(path)
 
 
-func _unhandled_input(event):
-    if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
-        var point = event.position
-        var from = camera.project_ray_origin(point)
-        var to = from + camera.project_ray_normal(point) * 1000
-        var target_point = nav.get_closest_point_to_segment(from, to)
-        navigate_to_point(target_point)
+#~ func _unhandled_input(event):
+#~     if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+#~         var point = event.position
+#~         var from = camera.project_ray_origin(point)
+#~         var to = from + camera.project_ray_normal(point) * 1000
+#~         var target_point = nav.get_closest_point_to_segment(from, to)
+#~         navigate_to_point(target_point)
 
 
 func draw_path(path_array):
