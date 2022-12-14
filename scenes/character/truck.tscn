@@ -205,5 +205,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7648, 0 )
 
 [node name="camera" type="Camera" parent="camera_pivot"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.612042, 3.05952 )
-fov = 108.473
+fov = 84.3
 script = ExtResource( 11 )
+max_distance = 10.0
+height = 5.0
