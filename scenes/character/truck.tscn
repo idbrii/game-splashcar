@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/kenney_carkit_gltf/plastic.material" type="Material" id=1]
 [ext_resource path="res://code/kinecar.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://assets/kenney_carkit_gltf/carTire.material" type="Material" id=9]
 [ext_resource path="res://code/speedometer.gd" type="Script" id=10]
 [ext_resource path="res://scenes/character/follow_camera.gd" type="Script" id=11]
+[ext_resource path="res://code/wavelauncher.gd" type="Script" id=12]
+[ext_resource path="res://scenes/gameplay/wave.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "truck_Mesh body"
@@ -210,3 +212,8 @@ far = 200.0
 script = ExtResource( 11 )
 max_distance = 10.0
 height = 5.0
+
+[node name="WaveLauncher" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.50149 )
+script = ExtResource( 12 )
+wave_scene = ExtResource( 13 )
