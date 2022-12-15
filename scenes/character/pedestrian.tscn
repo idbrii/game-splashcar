@@ -49,7 +49,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="AnimatedSprite3D" parent="."]
-transform = Transform( 0.444, 0, 0, 0, 0.444, 0, 0, 0, 0.444, 0, 0.760485, 0 )
+transform = Transform( 0.444, 0, 0, 0, 0.444, 0, 0, 0, 0.444, 0, 1.34479, 0 )
 billboard = 2
 frames = SubResource( 8 )
 animation = "idle"
