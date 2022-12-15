@@ -61,10 +61,7 @@ func _physics_process(delta):
             # Make the robot look at the point.
             look_at(look_at_point, Vector3.UP)
 
-            # TODO(dbriscoe): Not sure this is actually the eye's right vector.
-            var eye_right := camera.global_transform.basis.x
-            var dot := eye_right.dot(direction)
-            $Sprite.flip_h = dot < 0
+            $Billboard.update_facing(direction, $Sprite)
 
 
 func navigate_to_point(target_point):

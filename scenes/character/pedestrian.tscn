@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://code/pedestrian.gd" type="Script" id=1]
 [ext_resource path="res://assets/melissa/guy1_idle.png" type="Texture" id=2]
 [ext_resource path="res://assets/melissa/guy1_wet.png" type="Texture" id=3]
+[ext_resource path="res://code/billboard.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape" id=5]
 radius = 0.573226
@@ -52,3 +53,6 @@ transform = Transform( 0.444, 0, 0, 0, 0.444, 0, 0, 0, 0.444, 0, 0.760485, 0 )
 billboard = 2
 frames = SubResource( 8 )
 animation = "idle"
+
+[node name="Billboard" type="Node" parent="."]
+script = ExtResource( 4 )

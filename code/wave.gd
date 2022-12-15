@@ -16,6 +16,8 @@ func _physics_process(_dt):
     # Should we scale them out?
     #~ scale = Vector3.ONE * sin(progress * TAU/2)
 
+    $Billboard.update_facing(linear_velocity, $Sprite)
+
 
 func _on_DeathTimer_timeout():
     queue_free()
