@@ -118,6 +118,36 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9819, 0.235383, 0 )
 [node name="puddle5" parent="puddles" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9819, 0.235383, -12 )
 
+[node name="puddle13" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9819, 0.235383, 25 )
+
+[node name="puddle14" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9819, 0.235383, 28 )
+
+[node name="puddle15" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0181, 0.235383, 24 )
+
+[node name="puddle16" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.9819, 0.235383, 24 )
+
+[node name="puddle17" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0181, 0.235383, 28 )
+
+[node name="puddle18" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.0181, 0.235383, 23 )
+
+[node name="puddle19" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.0181, 0.235383, 17 )
+
+[node name="puddle20" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.0181, 0.235383, -1 )
+
+[node name="puddle21" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0181, 0.235383, -22 )
+
+[node name="puddle22" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.0181, 0.235383, -34 )
+
 [node name="puddle6" parent="puddles" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9819, 0.235383, -21 )
 
@@ -127,11 +157,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9819, 0.235383, -33 )
 [node name="puddle8" parent="puddles" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0181, 0.235383, -33 )
 
+[node name="puddle10" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0181, 0.235383, -33 )
+
+[node name="puddle11" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.9819, 0.235383, -33 )
+
+[node name="puddle12" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.9819, 0.235383, -35 )
+
 [node name="puddle9" parent="puddles" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0181, 0.235383, -36 )
-
-[node name="puddle10" parent="puddles" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.0181, 0.235383, -32 )
 
 [node name="puddle2" parent="puddles" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9819, 0.235383, 14 )
@@ -141,3 +177,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9819, 0.235383, 33 )
 
 [node name="puddle4" parent="puddles" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9819, 0.235383, 46 )
+
+[connection signal="gameplay_entered" from="puddles" to="PlayerTruck" method="_on_puddles_gameplay_entered"]
