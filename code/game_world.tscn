@@ -44,6 +44,14 @@ transform = Transform( 9.95381, 0, 0, 0, 9.95381, 0, 0, 0, 9.95381, 17.3454, 3.8
 [node name="PathDrawer" type="ImmediateGeometry" parent="."]
 unique_name_in_owner = true
 
+[node name="CityBound_TopLeft" type="Position3D" parent="."]
+unique_name_in_owner = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -106.756, -1.52588e-05, -39.1447 )
+
+[node name="CityBound_BottomRight" type="Position3D" parent="."]
+unique_name_in_owner = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 69.8907, -1.52588e-05, 139.627 )
+
 [node name="Crowd" type="Spatial" parent="."]
 script = ExtResource( 7 )
 
@@ -69,4 +77,36 @@ show_path = false
 
 [node name="pedestrian6" parent="Crowd" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.0959, 0, 20.4331 )
+show_path = false
+
+[node name="pedestrian7" parent="Crowd" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.9243, 0, 24.9275 )
+show_path = false
+
+[node name="pedestrian8" parent="Crowd" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -101.942, 0, 24.557 )
+show_path = false
+
+[node name="pedestrian9" parent="Crowd" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -102.006, 0, 85.1224 )
+show_path = false
+
+[node name="pedestrian10" parent="Crowd" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64.1435, 0, 85.9116 )
+show_path = false
+
+[node name="pedestrian11" parent="Crowd" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2014, -1.52588e-05, 115.775 )
+show_path = false
+
+[node name="pedestrian12" parent="Crowd" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -104.223, 1.52588e-05, 128.371 )
+show_path = false
+
+[node name="pedestrian13" parent="Crowd" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6549, 1.52588e-05, 130.09 )
+show_path = false
+
+[node name="pedestrian14" parent="Crowd" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.0902, 1.52588e-05, -8.90063 )
 show_path = false
