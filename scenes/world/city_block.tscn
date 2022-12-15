@@ -15,7 +15,7 @@
 [ext_resource path="res://assets/kenney_citykitcommercial/small_buildingF.glb" type="PackedScene" id=13]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 2.49449, 1, 2.49135 )
+extents = Vector3( 2.492, 1, 2.492 )
 
 [node name="city_block" type="Spatial"]
 

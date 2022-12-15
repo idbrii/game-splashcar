@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/world/city_block.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/kenney_citykitroads/road_straight.glb" type="PackedScene" id=2]
@@ -11,6 +11,15 @@
 [ext_resource path="res://assets/kenney_citykitcommercial/small_buildingE.glb" type="PackedScene" id=9]
 [ext_resource path="res://assets/kenney_citykitcommercial/small_buildingF.glb" type="PackedScene" id=10]
 [ext_resource path="res://scenes/world/border_buildings.tscn" type="PackedScene" id=11]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 2.10909, 1, 0.635663 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 2.492, 1, 0.650762 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 2.61488, 1, 0.650762 )
 
 [node name="TheCity" type="Spatial"]
 
@@ -285,6 +294,54 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.92072
 
 [node name="small_buildingF" parent="EndFillerBuildings" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.486, 0, 18.016 )
+
+[node name="Blocker2" type="RigidBody" parent="EndFillerBuildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88412, 0, 18.3359 )
+mode = 1
+
+[node name="CollisionShape" type="CollisionShape" parent="EndFillerBuildings/Blocker2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.272797, 0.684264, -0.477463 )
+shape = SubResource( 1 )
+
+[node name="Blocker" type="RigidBody" parent="EndFillerBuildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89764, 0, 18.3359 )
+mode = 1
+
+[node name="CollisionShape" type="CollisionShape" parent="EndFillerBuildings/Blocker"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.112211, 0.684264, -0.50766 )
+shape = SubResource( 2 )
+
+[node name="Blocker3" type="RigidBody" parent="EndFillerBuildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64343, 0, 18.3359 )
+mode = 1
+
+[node name="CollisionShape" type="CollisionShape" parent="EndFillerBuildings/Blocker3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.484173, 0.684264, -0.477463 )
+shape = SubResource( 3 )
+
+[node name="Blocker4" type="RigidBody" parent="EndFillerBuildings"]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 5.36856, 0, 3.01552 )
+mode = 1
+
+[node name="CollisionShape" type="CollisionShape" parent="EndFillerBuildings/Blocker4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.272797, 0.684264, -0.477463 )
+shape = SubResource( 1 )
+
+[node name="Blocker5" type="RigidBody" parent="EndFillerBuildings"]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 5.36856, 0, 9.002 )
+mode = 1
+
+[node name="CollisionShape" type="CollisionShape" parent="EndFillerBuildings/Blocker5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.112211, 0.684264, -0.50766 )
+shape = SubResource( 2 )
+
+[node name="Blocker6" type="RigidBody" parent="EndFillerBuildings"]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 5.36856, 0, 14.5431 )
+mode = 1
+
+[node name="CollisionShape" type="CollisionShape" parent="EndFillerBuildings/Blocker6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.484173, 0.684264, -0.477463 )
+shape = SubResource( 3 )
 
 [node name="BorderBuildings_East" parent="." instance=ExtResource( 11 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.08026, 0, 12.7869 )
