@@ -113,4 +113,31 @@ show_path = false
 [node name="puddles" type="Spatial" parent="."]
 
 [node name="puddle" parent="puddles" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9819, -0.0646169, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9819, 0.235383, 0 )
+
+[node name="puddle5" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9819, 0.235383, -12 )
+
+[node name="puddle6" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9819, 0.235383, -21 )
+
+[node name="puddle7" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9819, 0.235383, -33 )
+
+[node name="puddle8" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0181, 0.235383, -33 )
+
+[node name="puddle9" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0181, 0.235383, -36 )
+
+[node name="puddle10" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.0181, 0.235383, -32 )
+
+[node name="puddle2" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9819, 0.235383, 14 )
+
+[node name="puddle3" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9819, 0.235383, 33 )
+
+[node name="puddle4" parent="puddles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9819, 0.235383, 46 )
