@@ -21,7 +21,6 @@ func _ready():
     world_size = top_left.global_translation - bottom_right.global_translation
     city_radius = world_size.length() * 0.6
     world_centre = top_left.global_translation.linear_interpolate(bottom_right.global_translation, 0.5)
-    var nav: Navigation = get_node("%Navigation") as Navigation
     for ped in get_children():
         ped.nav = nav
         _nav_to_random_point(ped)
