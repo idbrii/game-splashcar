@@ -18,6 +18,8 @@ region_min_size = 61.23
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.468238, 0.883602, 0, -0.883602, 0.468238, 0, 31.0751, 0 )
+light_color = Color( 1, 0.913725, 0.776471, 1 )
+light_specular = 1.352
 shadow_enabled = true
 
 [node name="PlayerTruck" parent="." instance=ExtResource( 4 )]
