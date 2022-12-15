@@ -22,8 +22,9 @@ func _ready():
     city_radius = world_size.length() * 0.6
     world_centre = top_left.global_translation.linear_interpolate(bottom_right.global_translation, 0.5)
     var nav: Navigation = get_node("%Navigation") as Navigation
-    for c in get_children():
-        c.nav = nav
+    for ped in get_children():
+        ped.nav = nav
+        _nav_to_random_point(ped)
 
 
 func _process(dt):
@@ -32,10 +33,13 @@ func _process(dt):
         return
     timer = seconds_between_moves
 
-    var point = point_in_radius(city_radius)
-    var target_point = nav.get_closest_point_to_segment(Vector3(0,100,0), point + world_centre)
     next_ped_idx += 1
     if next_ped_idx >= get_child_count():
         next_ped_idx = 0
-    var c := get_child(next_ped_idx)
-    c.navigate_to_point(target_point)
+    var ped := get_child(next_ped_idx)
+    _nav_to_random_point(ped)
+
+func _nav_to_random_point(ped):
+    var point = point_in_radius(city_radius)
+    var target_point = nav.get_closest_point_to_segment(Vector3(0,100,0), point + world_centre)
+    ped.navigate_to_point(target_point)
