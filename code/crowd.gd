@@ -41,5 +41,5 @@ func _process(dt):
 
 func _nav_to_random_point(ped):
     var point = point_in_radius(city_radius)
-    var target_point = nav.get_closest_point_to_segment(Vector3(0,100,0), point + world_centre)
+    var target_point = nav.get_closest_point(point + world_centre)
     ped.navigate_to_point(target_point)
