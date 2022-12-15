@@ -96,6 +96,10 @@ window/stretch/aspect="expand"
 
 enabled=PoolStringArray( "res://addons/game-template/plugin.cfg", "res://addons/orbit_camera/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg" )
 
+[global]
+
+layer=false
+
 [input]
 
 pause={
@@ -163,7 +167,9 @@ cycle_camera={
 [layer_names]
 
 2d_physics/layer_1="player"
+3d_physics/layer_1="hits_player"
 2d_physics/layer_2="enemy"
+3d_physics/layer_2="hits_pedestrian"
 2d_physics/layer_3="projectile"
 3d_physics/layer_3="hits_wall"
 2d_physics/layer_4="collectible"
