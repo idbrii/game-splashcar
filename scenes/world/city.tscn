@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/world/city_block.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/kenney_citykitroads/road_straight.glb" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/kenney_citykitcommercial/small_buildingC.glb" type="PackedScene" id=8]
 [ext_resource path="res://assets/kenney_citykitcommercial/small_buildingE.glb" type="PackedScene" id=9]
 [ext_resource path="res://assets/kenney_citykitcommercial/small_buildingF.glb" type="PackedScene" id=10]
+[ext_resource path="res://scenes/world/border_buildings.tscn" type="PackedScene" id=11]
 
 [node name="TheCity" type="Spatial"]
 
@@ -51,15 +52,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 12 )
 [node name="city_block9" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 12 )
 
-[node name="groundplane" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
-width = 80.0
-height = 0.5
-depth = 80.0
-__meta__ = {
-"_editor_description_": "I added this to "
-}
-
 [node name="Ends" type="Spatial" parent="."]
 
 [node name="road_curve" parent="Ends" instance=ExtResource( 4 )]
@@ -71,124 +63,124 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.743, 
 [node name="road_curve3" parent="Ends" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.498, 0, 17.74 )
 
-[node name="South" type="Spatial" parent="Ends"]
+[node name="SouthRoad" type="Spatial" parent="Ends"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.439, 0, 17.886 )
 
-[node name="road_straight" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56578, 0, 0.337578 )
 
-[node name="road_straight2" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight2" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56578, 0, 0.337578 )
 
-[node name="road_straight3" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight3" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56578, 0, 0.337578 )
 
-[node name="road_straight4" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight4" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56578, 0, 0.337578 )
 
-[node name="road_straight5" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight5" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.565781, 0, 0.337578 )
 
-[node name="road_straight6" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight6" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43422, 0, 0.337578 )
 
-[node name="road_straight7" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight7" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43422, 0, 0.337578 )
 
-[node name="road_straight8" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight8" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.43422, 0, 0.337578 )
 
-[node name="road_straight9" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight9" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.43422, 0, 0.337578 )
 
-[node name="road_straight10" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight10" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.43422, 0, 0.337578 )
 
-[node name="road_straight16" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight16" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.18422, 0, 0.100578 )
 
-[node name="road_straight17" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight17" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.18422, 0, 0.100578 )
 
-[node name="road_straight11" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight11" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.43422, 0, 0.337578 )
 
-[node name="road_straight12" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight12" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.43422, 0, 0.337578 )
 
-[node name="road_straight13" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight13" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.43422, 0, 0.337578 )
 
-[node name="road_straight14" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight14" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4342, 0, 0.337578 )
 
-[node name="road_straight15" parent="Ends/South" instance=ExtResource( 2 )]
+[node name="road_straight15" parent="Ends/SouthRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4342, 0, 0.337578 )
 
-[node name="road_intersectionLine4" parent="Ends/South" instance=ExtResource( 3 )]
+[node name="road_intersectionLine4" parent="Ends/SouthRoad" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.434219, 0, 0.337578 )
 
-[node name="road_intersectionLine3" parent="Ends/South" instance=ExtResource( 3 )]
+[node name="road_intersectionLine3" parent="Ends/SouthRoad" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.43422, 0, 0.337578 )
 
-[node name="East" type="Spatial" parent="Ends"]
+[node name="EastRoad" type="Spatial" parent="Ends"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.901, 0, 5.558 )
 
-[node name="road_straight" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4342, 0, 0.337578 )
 
-[node name="road_straight2" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight2" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56578, 0, 0.337578 )
 
-[node name="road_straight3" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight3" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56578, 0, 0.337578 )
 
-[node name="road_straight4" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight4" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56578, 0, 0.337578 )
 
-[node name="road_straight5" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight5" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.565781, 0, 0.337578 )
 
-[node name="road_straight6" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight6" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43422, 0, 0.337578 )
 
-[node name="road_straight7" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight7" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43422, 0, 0.337578 )
 
-[node name="road_straight8" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight8" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.43422, 0, 0.337578 )
 
-[node name="road_straight9" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight9" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.43422, 0, 0.337578 )
 
-[node name="road_straight10" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight10" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.43422, 0, 0.337578 )
 
-[node name="road_straight16" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight16" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.18422, 0, 0.100578 )
 
-[node name="road_straight17" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight17" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.18422, 0, 0.100578 )
 
-[node name="road_straight11" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight11" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.43422, 0, 0.337578 )
 
-[node name="road_straight12" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight12" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.43422, 0, 0.337578 )
 
-[node name="road_straight13" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight13" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.43422, 0, 0.337578 )
 
-[node name="road_straight14" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight14" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4342, 0, 0.337578 )
 
-[node name="road_straight15" parent="Ends/East" instance=ExtResource( 2 )]
+[node name="road_straight15" parent="Ends/EastRoad" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4342, 0, 0.337578 )
 
-[node name="road_intersectionLine4" parent="Ends/East" instance=ExtResource( 3 )]
+[node name="road_intersectionLine4" parent="Ends/EastRoad" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.434219, 0, 0.337578 )
 
-[node name="road_intersectionLine3" parent="Ends/East" instance=ExtResource( 3 )]
+[node name="road_intersectionLine3" parent="Ends/EastRoad" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.43422, 0, 0.337578 )
 
 [node name="EndBlockers" type="Spatial" parent="Ends"]
@@ -293,3 +285,14 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.92072
 
 [node name="small_buildingF" parent="EndFillerBuildings" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.486, 0, 18.016 )
+
+[node name="BorderBuildings_East" parent="." instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.08026, 0, 12.7869 )
+
+[node name="BorderBuildings_South" parent="." instance=ExtResource( 11 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.2568, 0, 18.983 )
+
+[node name="BorderBuildings_North" parent="." instance=ExtResource( 11 )]
+
+[node name="BorderBuildings_West" parent="." instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.0092, -4.76837e-07, 6.08138 )
