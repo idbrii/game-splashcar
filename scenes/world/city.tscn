@@ -297,6 +297,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.486, 0, 18.016 )
 
 [node name="Blocker2" type="RigidBody" parent="EndFillerBuildings"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88412, 0, 18.3359 )
+collision_layer = 4
+collision_mask = 7
 mode = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="EndFillerBuildings/Blocker2"]
@@ -305,6 +307,8 @@ shape = SubResource( 1 )
 
 [node name="Blocker" type="RigidBody" parent="EndFillerBuildings"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89764, 0, 18.3359 )
+collision_layer = 4
+collision_mask = 7
 mode = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="EndFillerBuildings/Blocker"]
@@ -313,6 +317,8 @@ shape = SubResource( 2 )
 
 [node name="Blocker3" type="RigidBody" parent="EndFillerBuildings"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64343, 0, 18.3359 )
+collision_layer = 4
+collision_mask = 7
 mode = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="EndFillerBuildings/Blocker3"]
@@ -321,6 +327,8 @@ shape = SubResource( 3 )
 
 [node name="Blocker4" type="RigidBody" parent="EndFillerBuildings"]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 5.36856, 0, 3.01552 )
+collision_layer = 4
+collision_mask = 7
 mode = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="EndFillerBuildings/Blocker4"]
@@ -329,6 +337,8 @@ shape = SubResource( 1 )
 
 [node name="Blocker5" type="RigidBody" parent="EndFillerBuildings"]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 5.36856, 0, 9.002 )
+collision_layer = 4
+collision_mask = 7
 mode = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="EndFillerBuildings/Blocker5"]
@@ -337,6 +347,8 @@ shape = SubResource( 2 )
 
 [node name="Blocker6" type="RigidBody" parent="EndFillerBuildings"]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 5.36856, 0, 14.5431 )
+collision_layer = 4
+collision_mask = 7
 mode = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="EndFillerBuildings/Blocker6"]

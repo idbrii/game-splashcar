@@ -20,6 +20,8 @@ extents = Vector3( 2.492, 1, 2.492 )
 [node name="city_block" type="Spatial"]
 
 [node name="Blocker" type="RigidBody" parent="."]
+collision_layer = 4
+collision_mask = 7
 mode = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="Blocker"]
