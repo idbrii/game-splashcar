@@ -4,8 +4,8 @@ class_name AudioSet
 
 export(Array, AudioStream) var sounds = null
 
-func _init(sounds = null):
-    sounds = sounds
+func _init(sounds_ = null):
+    sounds = sounds_
 
 
 func choose() -> AudioStream:
