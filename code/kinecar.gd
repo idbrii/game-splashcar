@@ -4,7 +4,7 @@ class_name KineCar
 
 export(float, -100,  0,    1) var gravity := -20.0
 export(float, 0,     100,  1) var wheel_base := 70.0
-export(float, 0.001, 180,  1) var steering_angle := 15
+export(float, 0.001, 180,  1) var steering_angle := 15.0
 export(float, 0,     1000, 1) var engine_power := 800.0
 export(float, -10,   0,    0.01) var friction := -0.9
 export(float, -10,   0,    0.01) var drag := -0.001
