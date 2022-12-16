@@ -14,7 +14,7 @@ env:
 
 jobs:
   export-windows:
-    if: false
+    if: true
     name: Windows Export
     runs-on: ubuntu-20.04
     container:
