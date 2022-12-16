@@ -16,6 +16,12 @@ export var show_path := true
 
 var nav: Navigation
 onready var camera: Spatial = get_viewport().get_camera()
+var loves_water := true
+
+
+func init_pedestrian(anim: SpriteFrames, loves_water: bool):
+    $Sprite.set_sprite_frames(anim)
+    loves_water = loves_water
 
 
 func _ready():
@@ -74,6 +80,9 @@ func navigate_to_point(target_point):
 
 func on_splashed():
     $Sprite.play("wet")
+    if loves_water:
+        # TODO(dbriscoe): Play sounds here
+        pass
 
 
 #~ func _unhandled_input(event):

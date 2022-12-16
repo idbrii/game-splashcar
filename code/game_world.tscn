@@ -47,6 +47,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 69.8907, -1.52588e-05, 139.627
 
 [node name="Crowd" type="Spatial" parent="."]
 script = ExtResource( 7 )
+seconds_between_moves = null
 
 [node name="pedestrian" parent="Crowd" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.01706, -3.8147e-06, 23.7616 )

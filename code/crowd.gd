@@ -13,6 +13,7 @@ var city_radius := 100.0
 
 var next_ped_idx := 0
 
+var animsets = preload("res://scenes/character/people_anims.tres")
 
 func point_in_radius(radius):
     return Vector3(rand_range(-radius, radius), 0, rand_range(-radius, radius))
@@ -24,6 +25,11 @@ func _ready():
     for ped in get_children():
         ped.nav = nav
         _nav_to_random_point(ped)
+
+        var idx: int = randi() % animsets.people_anims.size()
+        var loves_water = animsets.people_love_water[idx]
+        var anim = animsets.people_anims[idx]
+        ped.init_pedestrian(anim, loves_water)
 
 
 func _process(dt):
