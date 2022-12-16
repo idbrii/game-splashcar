@@ -42,3 +42,5 @@ animation = "idle"
 
 [node name="Billboard" type="Node" parent="."]
 script = ExtResource( 4 )
+
+[connection signal="gameplay_entered" from="CollisionShape" to="." method="_on_CollisionShape_gameplay_entered"]
