@@ -24,5 +24,5 @@ func _process(dt):
 
 	wave.global_translation = global_translation
 	wave.set_move_direction(global_translation - car.global_translation)
-	print(global_translation - car.global_translation)
+	#~ print(global_translation - car.global_translation)
 

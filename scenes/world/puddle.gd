@@ -15,7 +15,7 @@ func _ready():
 func _on_Area_body_entered(body):
 	if body.is_in_group("player") == false:
 		return
-	
+
 	var parent = get_parent()
 	for n in 4:
 		var wave = wave_scene.instance()
