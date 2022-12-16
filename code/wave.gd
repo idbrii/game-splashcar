@@ -18,8 +18,8 @@ func set_move_direction(direction):
 func _physics_process(_dt):
     var move_velocity := move_direction * move_speed
     var linear_velocity := move_and_slide(move_velocity)
-    var progress = $DeathTimer.time_left / duration
     # Should we scale them out?
+    #~ var progress = $DeathTimer.time_left / duration
     #~ scale = Vector3.ONE * sin(progress * TAU/2)
 
     $Billboard.update_facing(linear_velocity, $Sprite)

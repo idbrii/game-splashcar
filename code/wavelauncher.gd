@@ -8,8 +8,7 @@ export (PackedScene) var wave_scene
 
 var delay := 0.0
 
-func _process(dt):
-    return
+func _process_disabled(dt):
     delay -= dt
     if delay > 0:
         return
