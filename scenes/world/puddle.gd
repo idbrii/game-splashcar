@@ -1,10 +1,6 @@
 extends Spatial
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+export (PackedScene) var wave_scene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,8 +13,23 @@ func _ready():
 
 
 func _on_Area_body_entered(body):
+	if body.is_in_group("player") == false:
+		return
+
 	$RespawnTimer.start()
+	for n in 4:
+		var wave = wave_scene.instance()
+		add_child(wave)
+		wave.global_translation = body.global_translation
+		var angle = Vector3(1, 0, 0).rotated(Vector3(0, 0, 1).normalized(), PI/2 * n)
+		print(angle, " ||||| ", wave.global_translation)
+		
+		wave.set_move_direction(angle)
+
+		
 	hide()
+	
+
 
 
 func _on_RespawnTimer_timeout():

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/water_texture.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/world/puddle.gd" type="Script" id=2]
+[ext_resource path="res://scenes/gameplay/wave.tscn" type="PackedScene" id=3]
 
 [sub_resource type="QuadMesh" id=1]
 
@@ -20,6 +21,7 @@ extents = Vector3( 0.501223, 0.0398939, 0.471993 )
 
 [node name="puddle" type="Spatial"]
 script = ExtResource( 2 )
+wave_scene = ExtResource( 3 )
 
 [node name="Area" type="Area" parent="."]
 

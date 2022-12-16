@@ -24,7 +24,7 @@ light_color = Color( 1, 0.913725, 0.776471, 1 )
 light_specular = 1.352
 shadow_enabled = true
 
-[node name="PlayerTruck" parent="." instance=ExtResource( 4 )]
+[node name="PlayerTruck" parent="." groups=["player"] instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.1376, 0.181384, 24.7934 )
 
 [node name="Navigation" type="Navigation" parent="."]
