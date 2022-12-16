@@ -81,7 +81,7 @@ func calculate_steering(dt):
     look_at(transform.origin + new_heading, transform.basis.y)
 
     if not $Audio_Tires.is_playing() and is_hard_turn and can_slip:
-        print("Play screech")
+        #~ print("Play screech")
         tire_screeches.play_random($Audio_Tires)
 
 
