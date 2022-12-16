@@ -30,18 +30,22 @@ func point_in_radius(radius):
 
 func _on_Timer_timeout():
 	var num_puddles = 0
-	
+
 	while num_puddles < max_puddles:
 		var pud = puddle_scene.instance()
 		var puddle_spawn_location = point_in_radius(city_radius)
 		var close = nav.get_closest_point(puddle_spawn_location)
-		
+
 		var delta = close - puddle_spawn_location
 		if delta.length() > 0:
 			delta = delta.normalized()
 			close += delta * rand_range(2, 4)
 		close.y = 0.2
-		
+
 		pud.global_translation = close
 		add_child(pud)
 		num_puddles += 1
+
+		# Delay after creating a few to avoid hanging on startup.
+		if num_puddles % 5 == 0:
+			yield(get_tree().create_timer(0.0), "timeout")
