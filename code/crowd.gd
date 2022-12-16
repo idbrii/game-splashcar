@@ -1,6 +1,7 @@
 extends Spatial
 
 export(int, 1, 100, 1) var seconds_between_moves := 1
+export(int, 1, 100, 1) var dry_duration := 5
 
 onready var nav: Navigation = get_node("%Navigation")
 onready var top_left: Position3D = get_node("%CityBound_TopLeft")
@@ -55,6 +56,11 @@ func _process(dt):
     if next_ped_idx >= get_child_count():
         next_ped_idx = 0
     var ped := get_child(next_ped_idx)
+    if ped.is_wet and ped.wet_time < (Time.get_ticks_msec() - dry_duration * 1000):
+        ped.dry_out()
+        _nav_to_random_point(ped)
+        return
+
     var point : Vector3
     var now := Time.get_ticks_msec()
     var old := now - 5 * 1000

@@ -85,15 +85,21 @@ func navigate_to_point(target_point):
         draw_path(path)
 
 
+var wet_time := 0
 func on_splashed():
     if is_wet:
         return
     is_wet = true
+    wet_time = Time.get_ticks_msec()
     $Sprite.play("wet")
     if loves_water:
         cheers.play_random($AudioPlayer)
     else:
         boos.play_random($AudioPlayer)
+
+func dry_out():
+    is_wet = false
+    $Sprite.play("idle")
 
 
 #~ func _unhandled_input(event):
