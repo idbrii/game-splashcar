@@ -100,7 +100,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/game-template/plugin.cfg", "res://addons/orbit_camera/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/component_view/plugin.cfg", "res://addons/game-template/plugin.cfg", "res://addons/orbit_camera/plugin.cfg", "res://addons/snappy/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg" )
 
 [global]
 
