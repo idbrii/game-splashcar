@@ -8,7 +8,8 @@
 [sub_resource type="SphereShape" id=1]
 
 [node name="wave" type="KinematicBody" groups=["waves"]]
-collision_layer = 2
+transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 0 )
+collision_layer = 8
 collision_mask = 6
 script = ExtResource( 2 )
 duration = 1.0
