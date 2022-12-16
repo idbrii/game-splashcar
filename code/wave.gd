@@ -12,20 +12,20 @@ func _ready():
 
 
 func set_move_direction(direction):
-	move_direction = direction.normalized()
-	$DeathTimer.start(duration)
+    move_direction = direction.normalized()
+    $DeathTimer.start(duration)
 
 func _physics_process(_dt):
-	var move_velocity := move_direction * move_speed
-	var linear_velocity := move_and_slide(move_velocity)
-	var progress = $DeathTimer.time_left / duration
-	# Should we scale them out?
-	#~ scale = Vector3.ONE * sin(progress * TAU/2)
+    var move_velocity := move_direction * move_speed
+    var linear_velocity := move_and_slide(move_velocity)
+    var progress = $DeathTimer.time_left / duration
+    # Should we scale them out?
+    #~ scale = Vector3.ONE * sin(progress * TAU/2)
 
-	$Billboard.update_facing(linear_velocity, $Sprite)
+    $Billboard.update_facing(linear_velocity, $Sprite)
 
 
 func _on_DeathTimer_timeout():
-	queue_free()
+    queue_free()
 
 
