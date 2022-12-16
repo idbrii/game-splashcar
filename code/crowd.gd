@@ -37,7 +37,6 @@ func _ready():
         var anim = animsets.people_anims[idx]
         ped.init_pedestrian(anim, loves_water)
 
-        walkers[ped] = now
 
 
     yield(get_tree().create_timer(0.2), "timeout")
@@ -57,6 +56,7 @@ func _process(dt):
         next_ped_idx = 0
     var ped := get_child(next_ped_idx)
     if ped.is_wet and ped.wet_time < (Time.get_ticks_msec() - dry_duration * 1000):
+        walkers.erase(ped)
         ped.dry_out()
         _nav_to_random_point(ped)
         return
@@ -64,7 +64,7 @@ func _process(dt):
     var point : Vector3
     var now := Time.get_ticks_msec()
     var old := now - 5 * 1000
-    if ped in walkers and walkers[ped] < old:
+    if not (ped in walkers) or walkers[ped] < old:
         point = _random_attraction_location()
         var target_point = nav.get_closest_point(point)
         walkers[ped] = now
