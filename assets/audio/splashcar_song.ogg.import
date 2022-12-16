@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/splashcar_song.ogg-9deac38144f4bddee78ab1495d0386ae.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/splashcar_song.ogg"
+dest_files=[ "res://.import/splashcar_song.ogg-9deac38144f4bddee78ab1495d0386ae.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
