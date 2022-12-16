@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/kenney_carkit_gltf/plastic.material" type="Material" id=1]
 [ext_resource path="res://code/kinecar.gd" type="Script" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://scenes/character/follow_camera.gd" type="Script" id=11]
 [ext_resource path="res://code/wavelauncher.gd" type="Script" id=12]
 [ext_resource path="res://scenes/gameplay/wave.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/audio/SplashCar_CarEngineLoop.ogg" type="AudioStream" id=14]
+[ext_resource path="res://scenes/gameplay/sounds_tire.tres" type="Resource" id=15]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "truck_Mesh body"
@@ -158,6 +160,9 @@ drag = -0.1
 braking = -25.0
 max_speed_reverse = 25.0
 slip_speed = 5.0
+tire_screeches = ExtResource( 15 )
+accelerate_volume = 18.0
+idle_volume = 0.0
 
 [node name="truck" type="Spatial" parent="."]
 
@@ -218,3 +223,10 @@ height = 5.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.50149 )
 script = ExtResource( 12 )
 wave_scene = ExtResource( 13 )
+
+[node name="Audio_Engine" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 14 )
+autoplay = true
+
+[node name="Audio_Tires" type="AudioStreamPlayer3D" parent="."]
+unit_db = 44.0

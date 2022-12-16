@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=9 format=2]
+
+[ext_resource path="res://code/audioset.gd" type="Script" id=1]
+[ext_resource path="res://assets/audio/SplashCar_TireCornering_6.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/audio/SplashCar_TireCornering_4.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/audio/SplashCar_TireCornering_7.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/audio/SplashCar_TireCornering_2.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/audio/SplashCar_TireCornering_5.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/audio/SplashCar_TireCornering_3.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/audio/SplashCar_TireCornering_1.wav" type="AudioStream" id=8]
+
+[resource]
+script = ExtResource( 1 )
+sounds = [ ExtResource( 8 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 4 ) ]
