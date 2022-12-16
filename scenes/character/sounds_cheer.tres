@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://code/audioset.gd" type="Script" id=1]
+[ext_resource path="res://assets/audio/SplashCar_cheer_1.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/audio/SplashCar_cheer_2.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/audio/SplashCar_cheer_3.wav" type="AudioStream" id=4]
+
+[resource]
+script = ExtResource( 1 )
+sounds = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]

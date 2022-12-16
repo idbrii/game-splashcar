@@ -13,10 +13,13 @@ var m = SpatialMaterial.new()
 
 var path = []
 export var show_path := true
+export(Resource) var cheers # AudioSet
 
 var nav: Navigation
 onready var camera: Spatial = get_viewport().get_camera()
 var loves_water := true
+
+var is_wet := false
 
 
 func init_pedestrian(anim: SpriteFrames, loves_water: bool):
@@ -79,10 +82,12 @@ func navigate_to_point(target_point):
 
 
 func on_splashed():
+    if is_wet:
+        return
+    is_wet = true
     $Sprite.play("wet")
     if loves_water:
-        # TODO(dbriscoe): Play sounds here
-        pass
+        cheers.play_random($AudioPlayer)
 
 
 #~ func _unhandled_input(event):
