@@ -22,10 +22,11 @@ func _ready():
     world_size = top_left.global_translation - bottom_right.global_translation
     city_radius = world_size.length() * 0.6
     world_centre = top_left.global_translation.linear_interpolate(bottom_right.global_translation, 0.5)
+    var idx := 0
     for ped in get_children():
         ped.nav = nav
 
-        var idx: int = randi() % animsets.people_anims.size()
+        idx = (idx + 1) % animsets.people_anims.size()
         var loves_water = animsets.people_love_water[idx]
         var anim = animsets.people_anims[idx]
         ped.init_pedestrian(anim, loves_water)

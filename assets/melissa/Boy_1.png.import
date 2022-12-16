@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/guy1_idle_3d.png-d8feb79d6d923b5c9a9887f6c0750548.s3tc.stex"
-path.etc2="res://.import/guy1_idle_3d.png-d8feb79d6d923b5c9a9887f6c0750548.etc2.stex"
+path.s3tc="res://.import/Boy_1.png-01b0d7ae9093515c0f59ab2c7108f485.s3tc.stex"
+path.etc2="res://.import/Boy_1.png-01b0d7ae9093515c0f59ab2c7108f485.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/melissa/guy1_idle_3d.png"
-dest_files=[ "res://.import/guy1_idle_3d.png-d8feb79d6d923b5c9a9887f6c0750548.s3tc.stex", "res://.import/guy1_idle_3d.png-d8feb79d6d923b5c9a9887f6c0750548.etc2.stex" ]
+source_file="res://assets/melissa/Boy_1.png"
+dest_files=[ "res://.import/Boy_1.png-01b0d7ae9093515c0f59ab2c7108f485.s3tc.stex", "res://.import/Boy_1.png-01b0d7ae9093515c0f59ab2c7108f485.etc2.stex" ]
 
 [params]
 
