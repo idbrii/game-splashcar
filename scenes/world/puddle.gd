@@ -15,20 +15,18 @@ func _ready():
 func _on_Area_body_entered(body):
 	if body.is_in_group("player") == false:
 		return
-
-	$RespawnTimer.start()
+	
+	var parent = get_parent()
 	for n in 4:
 		var wave = wave_scene.instance()
-		add_child(wave)
+		parent.add_child(wave)
 		wave.global_translation = body.global_translation
-		var angle = Vector3(1, 0, 0).rotated(Vector3(0, 0, 1).normalized(), PI/2 * n)
-		print(angle, " ||||| ", wave.global_translation)
-		
+		var angle = Vector3(1, 0, 0).rotated(Vector3(0, 1, 0).normalized(), PI/2 * n)
+		# print(angle, " ||||| ", wave.global_translation)
 		wave.set_move_direction(angle)
 
-		
+	$RespawnTimer.start()
 	hide()
-	
 
 
 
