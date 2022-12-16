@@ -39,11 +39,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://code/peopleanims.gd"
 }, {
-"base": "Resource",
-"class": "PersonAnim",
-"language": "GDScript",
-"path": "res://code/personanim.gd"
-}, {
 "base": "Reference",
 "class": "SceneData",
 "language": "GDScript",
@@ -71,7 +66,6 @@ _global_script_class_icons={
 "KineCar": "",
 "Pedestrian": "",
 "PeopleAnims": "",
-"PersonAnim": "",
 "SceneData": "",
 "Scenes": "",
 "Transition": "",
@@ -80,7 +74,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="WorldKit"
+config/name="Splash Car"
 config/description="A sandbox for making 3D games."
 run/main_scene="res://code/game_world.tscn"
 boot_splash/image="res://assets/splash.png"
