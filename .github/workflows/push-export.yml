@@ -125,7 +125,7 @@ jobs:
           PACKAGE: itch.zip
 
   export-mac:
-    if: false
+    if: true
     name: Mac Export
     runs-on: ubuntu-20.04
     container:
