@@ -2,8 +2,14 @@ extends KinematicBody
 
 export(float, 0.1, 100, 1) var move_speed := 5.0
 export(float, 0.1, 100, 1) var duration := 2.0
+export(Resource) var splash_sounds # AudioSet
 
 var move_direction := Vector3.ZERO
+
+
+func _ready():
+    splash_sounds.play_random($AudioPlayer)
+
 
 func set_move_direction(direction):
 	move_direction = direction.normalized()

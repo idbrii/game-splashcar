@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/placeholder/wave.png" type="Texture" id=1]
 [ext_resource path="res://code/wave.gd" type="Script" id=2]
 [ext_resource path="res://code/billboard.gd" type="Script" id=3]
+[ext_resource path="res://scenes/gameplay/sounds_splash.tres" type="Resource" id=4]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -11,6 +12,7 @@ collision_layer = 2
 collision_mask = 6
 script = ExtResource( 2 )
 duration = 1.0
+splash_sounds = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite3D" parent="."]
 transform = Transform( 0.349, 0, 0, 0, 0.349, 0, 0, 0, 0.349, 0, 0, 0 )
@@ -27,5 +29,7 @@ shape = SubResource( 1 )
 
 [node name="Billboard" type="Node" parent="."]
 script = ExtResource( 3 )
+
+[node name="AudioPlayer" type="AudioStreamPlayer3D" parent="."]
 
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
