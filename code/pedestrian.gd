@@ -23,13 +23,12 @@ var loves_water := true
 var is_wet := false
 
 
-func init_pedestrian(anim: SpriteFrames, loves_water: bool):
+func init_pedestrian(anim: SpriteFrames, loves_water_: bool):
     $Sprite.set_sprite_frames(anim)
-    loves_water = loves_water
+    loves_water = loves_water_
 
 
 func _ready():
-    set_process_input(true)
     m.flags_unshaded = true
     m.flags_use_point_size = true
     m.albedo_color = Color.yellow
