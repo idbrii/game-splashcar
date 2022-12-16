@@ -119,7 +119,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.4487, 0.15476, 10.7229 )
 [node name="puddles" type="Spatial" parent="."]
 script = ExtResource( 9 )
 puddle_scene = ExtResource( 8 )
-max_puddles = 300
+max_puddles = 500
 
 [node name="Timer" type="Timer" parent="puddles"]
 wait_time = 0.5
