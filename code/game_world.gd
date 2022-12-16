@@ -21,12 +21,12 @@ func _ready():
 
 	# spawn puddles
 	var num_puddles = 0
-	
+
 	while num_puddles < max_puddles:
 		var pud = puddle_scene.instance()
 		var puddle_spawn_location = point_in_radius(city_radius)
 		pud.global_translation = puddle_spawn_location
-		print(puddle_spawn_location)
+		#~ print(puddle_spawn_location)
 		add_child(pud)
 		num_puddles += 1
 
