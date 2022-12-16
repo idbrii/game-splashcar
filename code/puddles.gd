@@ -42,8 +42,8 @@ func _on_Timer_timeout():
 			close += delta * rand_range(2, 4)
 		close.y = 0.2
 
-		pud.global_translation = close
 		add_child(pud)
+		pud.global_translation = close
 		num_puddles += 1
 
 		# Delay after creating a few to avoid hanging on startup.
