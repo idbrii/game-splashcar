@@ -24,12 +24,16 @@ func _ready():
     world_centre = top_left.global_translation.linear_interpolate(bottom_right.global_translation, 0.5)
     for ped in get_children():
         ped.nav = nav
-        _nav_to_random_point(ped)
 
         var idx: int = randi() % animsets.people_anims.size()
         var loves_water = animsets.people_love_water[idx]
         var anim = animsets.people_anims[idx]
         ped.init_pedestrian(anim, loves_water)
+
+    yield(get_tree().create_timer(0.1), "timeout")
+
+    for ped in get_children():
+        _nav_to_random_point(ped)
 
 
 func _process(dt):
