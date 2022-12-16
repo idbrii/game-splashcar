@@ -34,6 +34,7 @@ unique_name_in_owner = true
 navmesh = SubResource( 6 )
 
 [node name="TheCity" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+unique_name_in_owner = true
 transform = Transform( 9.95381, 0, 0, 0, 9.95381, 0, 0, 0, 9.95381, 17.3454, 3.8147e-06, -33.8493 )
 
 [node name="PathDrawer" type="ImmediateGeometry" parent="."]
