@@ -21,11 +21,8 @@ func _on_Area_body_entered(body):
 		var wave = wave_scene.instance()
 		parent.add_child(wave)
 		wave.global_translation = body.global_translation
-		var ang = global_translation-body.global_translation
-		print(ang)
 		var angle = Vector3(1, 0, 0).rotated(Vector3(0, 1, 0).normalized(), PI/2 * n)
 		wave.set_move_direction(angle)
-	#	wave.set_move_direction(ang)
 
 	$RespawnTimer.start()
 	get_child(0).get_node("CollisionShape").disabled = true

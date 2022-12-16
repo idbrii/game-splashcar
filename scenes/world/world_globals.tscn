@@ -8,4 +8,4 @@ script = ExtResource( 2 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = -7.03
+volume_db = -19.265
